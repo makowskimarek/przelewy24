@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "f9efe6a4-5b81-4dbc-9bbd-b83b28a97035",
+		"name": "Przelewy24_v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/v1/testAccess",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "xxx",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "xxx",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sandbox.przelewy24.pl/api/v1/testAccess",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"przelewy24",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"testAccess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/transaction/register",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "xxx",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "xxx",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"merchantId\": xxx,\r\n\t\"posId\": xxx,\r\n\t\"sessionId\": \"1\",\r\n\t\"amount\": 1,\r\n\t\"currency\": \"PLN\",\r\n\t\"description\": \"Shopping\",\r\n\t\"email\": \"someemail12345@gmail.com\",\r\n\t\"country\": \"PL\",\r\n\t\"language\": \"pl\",\r\n\t\"urlReturn\": \"https://webhook.site/xxx\",\r\n\t\"urlStatus\": \"https://webhook.site/xxx\",\r\n\t\"sign\": \"xxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.przelewy24.pl/api/v1/transaction/register",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"przelewy24",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/transaction/verify",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "xxx",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "xxx",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchantId\": xxx,\r\n    \"posId\": xxx,\r\n    \"sessionId\": \"1\",\r\n    \"amount\": 1,\r\n    \"currency\": \"PLN\",\r\n    \"orderId\": xxx,\r\n    \"sign\": \"xxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sandbox.przelewy24.pl/api/v1/transaction/verify",
+					"protocol": "https",
+					"host": [
+						"sandbox",
+						"przelewy24",
+						"pl"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "startTransaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1,\r\n    \"currency\": \"PLN\",\r\n    \"description\": \"Buy kidney\",\r\n    \"email\": \"someemail12345@gmail.com\",\r\n    \"client\": \"John Doeing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment transaction return",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchantId\": xxx,\r\n    \"posId\": xxx,\r\n    \"sessionId\": \"1\",\r\n    \"amount\": 1,\r\n    \"originAmount\": 1,\r\n    \"currency\": \"PLN\",\r\n    \"orderId\": 1,\r\n    \"methodId\": 154,\r\n    \"statement\": \"xxx\",\r\n    \"sign\": \"xxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/transaction/return",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"transaction",
+						"return"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

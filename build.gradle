@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(16)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext.springBootVersion = '2.5.5'
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'jakarta.validation:jakarta.validation-api:2.0.2'
+    implementation 'com.h2database:h2:1.4.200'
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+    annotationProcessor "org.projectlombok:lombok:1.18.20"
+    annotationProcessor "org.hibernate:hibernate-jpamodelgen:6.0.0.Alpha8"
+
+    compileOnly "org.projectlombok:lombok:1.18.20"
+}
+
+test {
+    useJUnitPlatform()
+}
